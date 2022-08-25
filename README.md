@@ -5,6 +5,6 @@ Selenium / Python / AutoIT / Powershell - Automate Schoology group uploads via f
 
 **Directions:**
 python -m pip install pywin32
-
+<br>
 Run Powershell script - AD_Pull.ps1 - This is generate a CSV file export from Active Directory.
 
