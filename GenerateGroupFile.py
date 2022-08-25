@@ -4,8 +4,8 @@ import os
 
 
 def generateGroupFile(groupTXT,groupCSV,building,grade):
-    inputfile = csv.reader(open('C:\\Users\\zechaaron\\Documents\\AD\\ADUsers.csv', 'r'))
-    outputfile = open('C:\\Users\\zechaaron\\Documents\\AD\\'+groupTXT, 'w')
+    inputfile = csv.reader(open('C:\\Users\\zechaaron\\Downloads\\ADUsers.csv', 'r'))
+    outputfile = open('C:\\Users\\zechaaron\\OneDrive - Osseo Area Schools\\Documents\\AD\\'+groupTXT, 'w')
 
     header = next(inputfile)
     for line in inputfile:
@@ -27,10 +27,10 @@ def generateGroupFile(groupTXT,groupCSV,building,grade):
 
     # rename file to CSV
     try:
-         os.rename('C:\\Users\\zechaaron\\Documents\\AD\\'+groupTXT, 'C:\\Users\\zechaaron\\Documents\\AD\\' + groupCSV)
+         os.rename('C:\\Users\\zechaaron\\OneDrive - Osseo Area Schools\\Documents\\AD\\'+groupTXT, 'C:\\Users\\zechaaron\\OneDrive - Osseo Area Schools\\Documents\\AD\\' + groupCSV)
     except WindowsError:
-        os.remove('C:\\Users\\zechaaron\\Documents\\AD\\'+groupCSV)
-        os.rename('C:\\Users\\zechaaron\\Documents\\AD\\'+groupTXT,
-                  'C:\\Users\\zechaaron\\Documents\\AD\\'+groupCSV)
+        os.remove('C:\\Users\\zechaaron\\OneDrive - Osseo Area Schools\\Documents\\AD\\'+groupCSV)
+        os.rename('C:\\Users\\zechaaron\\OneDrive - Osseo Area Schools\\Documents\\AD\\'+groupTXT,
+                  'C:\\Users\\zechaaron\\OneDrive - Osseo Area Schools\\Documents\\AD\\'+groupCSV)
 
     print("File Generated");
