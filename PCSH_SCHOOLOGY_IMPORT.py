@@ -13,7 +13,6 @@ from GenerateGroupFile import generateGroupFile
 from selenium.webdriver.common.keys import Keys
 
 # Globals
-# Globals
 s=Service('C:/Users/zechaaron/Downloads/geckodriver.exe')
 browser =  webdriver.Firefox(service=s)
 groupName = 'PC CRC & Counseling'
