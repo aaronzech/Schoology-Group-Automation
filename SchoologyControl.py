@@ -12,7 +12,7 @@ import autoit
 
 
 
-def SchoologyControl(browser,groupName,autoITScript):
+def SchoologyControl(browser,groupName,groupCSV,clearEnrollments):
 
     # select enrollment type
     enrollmentType = browser.find_element(By.ID,'edit-enrollment-type')
@@ -27,7 +27,7 @@ def SchoologyControl(browser,groupName,autoITScript):
     
     
     select = browser.find_element(By.ID, "s2id_autogen1_search")
-    select.send_keys('PC CRC & Counseling')
+    select.send_keys(groupName)
     time.sleep(5)
     select.send_keys(Keys.ENTER)
     # select by visible text
@@ -35,15 +35,17 @@ def SchoologyControl(browser,groupName,autoITScript):
     print("group selected")
 
     # check clear group enrollments
-    #clearExistingEnrollments = browser.find_element(By.ID,'edit-clear-enrollments')
-    #clearExistingEnrollments.click()
+    if(clearEnrollments == True):
+        clearExistingEnrollments = browser.find_element(By.ID,'edit-clear-enrollments')
+        clearExistingEnrollments.click()
 
     time.sleep(2)  # delay for more reliablitiy
+    
     # uploadFIle
 
     #Send file keys method
     file = browser.find_element(By.XPATH,"//*[contains(@id,'html5')][not(contains(@id, '_container'))]") # Dynamic Element - Look for 'HTML5' and does not contain 'container'
-    file.send_keys("C:\\Users\\zechaaron\\OneDrive - Osseo Area Schools\\Documents\\AD\\PCSH_Students.csv")
+    file.send_keys("C:\\Users\\zechaaron\\OneDrive - Osseo Area Schools\\Documents\\AD\\"+groupCSV)
     #------------------------
 
     #attachFile = browser.find_element(By.ID,'upload-btn')

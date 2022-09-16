@@ -19,6 +19,7 @@ groupName = 'PC CRC & Counseling'
 groupCSV = 'PCSH_Students.csv'
 groupTXT = 'PCSH_Students.txt'
 autoITScript ='FileUpload.exe'
+clearEnrollments = False
 
 # Program Start
 generateGroupFile(groupTXT,groupCSV,'PCSH','PCSH-ALL')
@@ -27,4 +28,4 @@ time.sleep(4)
 login(browser)
 time.sleep(4)
 # Process the Schoology tasks
-SchoologyControl(browser,groupName,autoITScript)
+SchoologyControl(browser,groupName,groupCSV,clearEnrollments)
